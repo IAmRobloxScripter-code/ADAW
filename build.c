@@ -6,7 +6,8 @@ int main() {
   set_compiler(build, "gcc");
   set_output(build, "main");
   add_file(build, "main.c");
-  add_flag(build, "O1");
+  add_file(build, "interface.c");
+  add_file(build, "$(pkg-config --cflags --libs notcurses)");
   add_flag(build, "Wall");
   add_flag(build, "Wextra");
   compile(build);

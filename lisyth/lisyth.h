@@ -1,6 +1,7 @@
 #pragma once
 #include <stddef.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 
 typedef struct str_array {
@@ -152,7 +153,7 @@ void compile(process *ptr) {
     string_append(command, ptr->defs->values[index + 1]);
     string_append(command, " ");
   }
-
+  printf("%s\n", command->value);
   system(command->value);
 }
 #endif
